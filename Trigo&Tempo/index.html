@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigo & Tempo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <img src="imagens/trigoetempo.jpg" alt="Logo Trigo & Tempo" class="brand-logo">
+        <div class="brand-texto">
+          <span class="brand-name">Trigo &amp; Tempo</span>
+          <span class="brand-sub">Padaria & massas artesanais</span>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre nós</a>
+
+<div class="dropdown" id="produtosDropdown">
+  <a href="#produtos" id="produtosMenuLink">Produtos</a>
+  <div class="dropdown-content" id="produtosDropdownContent">
+    <a href="#" class="menu-categoria-link" data-category="massas">Massas</a>
+    <a href="#" class="menu-categoria-link" data-category="paes">Pão</a>
+    <a href="#" class="menu-categoria-link" data-category="croissants">Croissants</a>
+    <a href="#" class="menu-categoria-link" data-category="combos">Combos</a>
+  </div>
+</div>
+
+        <a href="#oferta">Oferta</a>
+        <a href="#entrega">Entrega</a>
+        <a href="#login">Login</a>
+        <a href="#carrinho">Carrinho <span id="cart-count" class="badge">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+<section class="hero hero-bakery" id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-kicker">Trigo &amp; Tempo</span>
+      <h1>O sabor artesanal do tempo certo.</h1>
+      <p>
+        Padaria artesanal com massas frescas, pão e croissants feitos com calma,
+        sabor e tradição em Cascais e arredores.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#produtos" class="btn-principal">Ver produtos</a>
+        <a href="#sobre" class="btn-outline">Saber mais</a>
+      </div>
+    </div>
+  </div>
+</section> 
+<section class="contact-strip">
+  <div class="container contact-strip-grid">
+    <div class="contact-strip-item">
+      <span class="contact-label">Telefone</span>
+      <strong>919191919</strong>
+    </div>
+
+    <div class="contact-strip-item">
+      <span class="contact-label">Email</span>
+      <strong>trigoetempolda@gmail.com</strong>
+    </div>
+
+    <div class="contact-strip-item">
+      <span class="contact-label">Entrega</span>
+      <strong>Cascais e arredores</strong>
+    </div>
+  </div>
+</section>
+
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-box">
+        <span class="mini-titulo">Tradição, sabor e tempo</span>
+        <h2>Sobre nós</h2>
+        <p class="sobre-resumo">
+          Na Trigo &amp; Tempo acreditamos que os melhores sabores nascem do tempo certo,
+          da dedicação e do cuidado em cada detalhe.
+        </p>
+
+        <button class="btn-principal" id="toggleSobre">Clica aqui para saber mais</button>
+
+        <div class="sobre-texto escondido" id="textoSobre">
+          <p>
+            A Trigo &amp; Tempo nasceu da paixão pela padaria artesanal e pelas massas frescas.
+            Trabalhamos com receitas inspiradas na tradição, ingredientes selecionados e uma apresentação acolhedora.
+          </p>
+          <p>
+            Queremos oferecer uma experiência simples, saborosa e memorável, seja para o pequeno-almoço,
+            para um jantar especial ou para uma encomenda em família.
+          </p>
+          <p>
+            Aqui o trigo encontra o tempo certo — e isso faz toda a diferença no resultado final.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="produtos-section" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <span class="mini-titulo">Catálogo</span>
+        <h2>Destaques da casa</h2>
+        <p>
+
+        </p>
+      </div>
+
+      <div class="destaques-topo">
+        <div class="destaques-header">
+
+        </div>
+        <div class="produtos-grid" id="destaquesGrid"></div>
+      </div>
+
+<div class="catalogo-box" id="catalogoMenu">
+  <div class="catalogo-header">
+    <span class="mini-titulo">Explorar menu</span>
+    <h3>Escolhe uma categoria</h3>
+    <p>
+
+  </div>
+
+  <div class="atalhos-categorias premium-categorias">
+    <button class="atalho-card categoria-btn active" data-category="massas">🍝 Massas frescas</button>
+    <button class="atalho-card categoria-btn" data-category="paes">🍞 Pão artesanal</button>
+    <button class="atalho-card categoria-btn" data-category="croissants">🥐 Croissants</button>
+    <button class="atalho-card categoria-btn" data-category="combos">📦 Combos</button>
+  </div>
+
+  <div class="categoria-bloco categoria-unica">
+    <div class="categoria-titulo-linha">
+      <h3 id="catalogoTitulo">🍝 Massas frescas</h3>
+      <span class="categoria-ajuda">Muda a categoria no menu ou nos botões acima</span>
+    </div>
+    <div class="produtos-grid" id="catalogoGrid"></div>
+  </div>
+</div>
+  </section>
+
+  <section class="oferta-section" id="oferta">
+    <div class="container">
+      <div class="section-header">
+        <span class="mini-titulo">Oferta especial</span>
+        <h2>Oferta da casa</h2>
+
+      </div>
+
+      <div class="oferta-card">
+        <div class="oferta-selo">Oferta</div>
+        <h3>A cada 20 itens, recebes 1 saco de pão com 4 unidades.</h3>
+        <p>
+          Esta oferta é automática e aparece no resumo da encomenda quando o carrinho
+          atingir a quantidade necessária.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="extras-section" id="entrega">
+    <div class="container">
+      <div class="section-header">
+        <span class="mini-titulo">Entrega</span>
+        <h2>Informação de entrega</h2>
+      </div>
+
+      <div class="info-card">
+        <p><strong>Zona:</strong> Cascais e arredores</p>
+        <p><strong>Distância máxima:</strong> até 20 km de Cascais</p>
+        <p><strong>Valor geral da entrega:</strong> 3,50€</p>
+        <p><strong>Entrega grátis:</strong> em compras acima de 15€</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-section" id="login">
+    <div class="container">
+      <div class="section-header">
+        <span class="mini-titulo">Área de cliente</span>
+        <h2>Login e registo</h2>
+        <p>Cria conta ou entra para ativares o desconto da primeira encomenda.</p>
+      </div>
+
+      <div class="login-grid">
+        <div class="login-card">
+          <span class="mini-titulo">Entrar</span>
+          <h3>Já tens conta?</h3>
+
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="o teu email">
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Palavra-passe</label>
+            <input type="password" id="loginPassword" placeholder="a tua palavra-passe">
+          </div>
+
+          <button class="btn-principal full" id="loginBtn">Entrar</button>
+        </div>
+
+        <div class="login-card">
+          <span class="mini-titulo">Criar conta</span>
+          <h3>Novo cliente</h3>
+
+          <div class="form-group">
+            <label for="registerName">Nome</label>
+            <input type="text" id="registerName" placeholder="o teu nome">
+          </div>
+
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" placeholder="o teu email">
+          </div>
+
+          <div class="form-group">
+            <label for="registerPassword">Palavra-passe</label>
+            <input type="password" id="registerPassword" placeholder="cria uma palavra-passe">
+          </div>
+
+          <button class="btn-secundario full" id="registerBtn">Criar conta</button>
+        </div>
+      </div>
+
+      <div class="user-status" id="userStatus">Não tens sessão iniciada.</div>
+    </div>
+  </section>
+
+  <section class="carrinho-section" id="carrinho">
+    <div class="container">
+      <div class="section-header">
+        <span class="mini-titulo">Resumo</span>
+        <h2>O teu carrinho</h2>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-card">
+          <ul id="cart-items" class="cart-items"></ul>
+          <p id="cart-empty" class="cart-empty">Ainda não adicionaste produtos.</p>
+          <div id="giftInfo" class="gift-info escondido"></div>
+        </div>
+
+        <div class="cart-summary">
+          <h3>Finalizar encomenda</h3>
+
+          <div class="form-group">
+            <label for="clienteNome">Nome</label>
+            <input type="text" id="clienteNome" placeholder="o teu nome">
+          </div>
+
+          <div class="form-group">
+            <label for="clienteTelefone">Telefone</label>
+            <input type="text" id="clienteTelefone" placeholder="912345678">
+          </div>
+
+          <div class="form-group">
+            <label for="clienteMorada">Morada</label>
+            <input type="text" id="clienteMorada" placeholder="rua, nº, localidade">
+          </div>
+
+          <div class="form-group">
+            <label for="metodoPagamento">Método de pagamento</label>
+            <select id="metodoPagamento">
+              <option value="">Escolhe uma opção</option>
+              <option value="MB Way">MB Way</option>
+              <option value="Transferência bancária">Transferência bancária</option>
+              <option value="Pagamento no ato da entrega">Pagamento no ato da entrega</option>
+            </select>
+          </div>
+
+          <div class="linha-resumo">
+            <span>Subtotal</span>
+            <strong id="subtotalValue">0,00€</strong>
+          </div>
+
+          <div class="linha-resumo">
+            <span>Desconto</span>
+            <strong id="discountValue">0,00€</strong>
+          </div>
+
+          <div class="linha-resumo">
+            <span>Entrega</span>
+            <strong id="deliveryValue">0,00€</strong>
+          </div>
+
+          <div class="linha-resumo total">
+            <span>Total final</span>
+            <strong id="totalValue">0,00€</strong>
+          </div>
+
+          <button class="btn-principal full" id="enviarBtn">Enviar encomenda</button>
+          <button class="btn-limpar full" id="clearCartBtn">Limpar carrinho</button>
+
+          <p class="nota-desconto">
+            A encomenda é enviada para o email da loja. O desconto de 10% aplica-se na primeira encomenda após login.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contacto">
+    <div class="container footer-grid">
+      <div>
+        <h3>Trigo &amp; Tempo</h3>
+        <p>Padaria artesanal, massas frescas e encomendas com sabor de casa.</p>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <p>Telefone: 919191919</p>
+        <p>Email: trigoetempolda@gmail.com</p>
+      </div>
+
+      <div>
+        <h4>Entrega</h4>
+        <p>Cascais e arredores</p>
+        <p>Até 20 km de Cascais</p>
+        <p>Grátis acima de 15€</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      emailjs.init("WdPH0j4uMQLjHIat9");
+    })();
+  </script>
+</body>
+</html>
